@@ -1,0 +1,19 @@
+name: cover
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - run: deno run cover.js > cover.ppm
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cover
+          path: cover.ppm
