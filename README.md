@@ -6,5 +6,5 @@ Going through [The Ray Tracer Challenge](https://pragprog.com/titles/jbtracer/th
 
 ## see also
 
-- [ahamez/ray-tracer](https://github.com/ahamez/ray-tracer)
-- [jamis/rtc-ocaml](https://github.com/jamis/rtc-ocaml)
+- [@ahamez/ray-tracer](https://github.com/ahamez/ray-tracer)
+- [@jamis/rtc-ocaml](https://github.com/jamis/rtc-ocaml)
