@@ -1,16 +1,26 @@
 ## about
 
-Going through [The Ray Tracer Challenge](https://pragprog.com/titles/jbtracer/the-ray-tracer-challenge/) in pure JS.
+Going through [The Ray Tracer Challenge](https://pragprog.com/titles/jbtracer/the-ray-tracer-challenge/) in JS.
 
 ![This took three plus days to render](cover.png)
 
-I put this here because none of the JS solutions I have come across on GitHub are cover to cover complete. The ones I found are also OOP based, whereas I am using classes very selectively for defining shapes mostly. I am extending from `Array` when it comes to tuples and matrices to help when querying via the `instanceof` operator for example, but the corresponding math helpers are pure functions.
+I put this here because none of the JavaScript implementations I have come across on GitHub are cover to cover complete. The ones I found seem to also be OOP based, whereas I am using classes selectively for defining shapes mostly. I did choose to extend from `Array` when it comes to tuples and matrices, but the corresponding math helpers are pure functions.
 
-There are probably easier, less involved ways of implementing a ray tracer, but I enjoyed the test first, language agonstic approach in the book and ray tracing is not exactly famous for being super fast either.
+There are probably more concise ways of creating a ray tracer[^1], but I enjoyed the mildly comprehensive, test first, language agonstic approach in this book. I am also happy to have used Node.js, Deno, and browser cross compatible plain JS, as well as solely [`console.assert()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/assert) for unit testing.
+
+Next to practical understanding, my goal picking this up was to work out WebGL model, view, projection matrices and to avoid having to rely on external libraries like [glMatrix](https://glmatrix.net) if I could as a result. I am already using the relevant bits on [Cyclops](https://thewhodidthis.net/085/) and [Hypnotized](https://thewhodidthis.net/009/), but should be extracting those parts out into a separate branch ideally.
 
 ## setup
 
-Source from an import map:
+Import from GitHub directly:
+
+```js
+import { mat4, Matrix } from "https://thewhodidthis.github.io/rtx/matrix.js"
+
+console.assert(mat4() instanceof Matrix)
+```
+
+Source from an import map, given an `imports.json` of:
 
 ```json
 {
@@ -20,21 +30,18 @@ Source from an import map:
 }
 ```
 
-Then using Deno for example:
+And an `example.js` of:
 
 ```js
-// Call with: deno run --import-map=imports.json example.js
 import { vector, Tuple } from "@thewhodidthis/rtx"
 
 console.assert(vector() instanceof Tuple)
 ```
 
-Or, import from GitHub directly, for example:
+Using Deno for example:
 
-```js
-import { mat4, Matrix } from "https://thewhodidthis.github.io/rtx/matrix.js"
-
-console.assert(mat4() instanceof Matrix)
+```sh
+deno run --import-map=imports.json example.js
 ```
 
 ## usage
@@ -96,3 +103,5 @@ console.log(ppm(c))
 
 - [@ahamez/ray-tracer](https://github.com/ahamez/ray-tracer)
 - [@jamis/rtc-ocaml](https://github.com/jamis/rtc-ocaml)
+
+[^1]: [@ssloy/tinyraytracer](https://github.com/ssloy/tinyraytracer) might be one.
