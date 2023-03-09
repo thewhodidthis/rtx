@@ -8,7 +8,7 @@ I put this here because none of the JavaScript implementations I have come acros
 
 There are probably more concise ways of creating a ray tracer[^1], but I enjoyed the mildly comprehensive, test first, language agonstic approach in this book. I am also happy to have used Node.js, Deno, and browser cross compatible plain JS, as well as solely [`console.assert()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/assert) for unit testing.
 
-Next to practical understanding, my goal picking this up was to work out WebGL model, view, projection matrices and to avoid having to rely on external libraries like [glMatrix](https://glmatrix.net) if I could as a result. I am already using the relevant bits on [Cyclops](https://thewhodidthis.net/085/) and [Hypnotized](https://thewhodidthis.net/009/), but should be extracting those parts out into a separate branch ideally.
+Next to practical understanding, my goal picking this up was to work out WebGL model, view, projection matrices and to avoid having to rely on external libraries like [glMatrix](https://glmatrix.net) if possible as a result. I am already using the relevant bits on [Cyclops](https://thewhodidthis.net/085/) and [Hypnotized](https://thewhodidthis.net/009/), but should be extracting those parts out into a separate branch ideally.
 
 ## setup
 
