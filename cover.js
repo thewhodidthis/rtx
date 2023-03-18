@@ -11,7 +11,7 @@ import { view } from "./transform.js"
 import { material } from "./material.js"
 import { world } from "./world.js"
 
-const pixels = 250
+const pixels = 320
 const c = camera(pixels, pixels, 0.785)
 const from = point(-6, 6, -10)
 const to = point(6, 0, 6)
@@ -42,7 +42,7 @@ const b = plane(material(WHITE, 1, 0, 0))
 b.transform = multiply(translation(0, 0, 500), rotation(Math.PI / 2, 0, 0))
 
 const cubes = [
-  cube(red, multiply(translation(4, 0, 0), medium)),
+  cube(white, multiply(translation(4, 0, 0), medium)),
   cube(blue, multiply(translation(8.5, 1.5, -0.5), large)),
   cube(red, multiply(translation(0, 0, 4), large)),
   cube(white, multiply(translation(4, 0, 4), small)),
