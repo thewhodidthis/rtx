@@ -59,6 +59,10 @@ export function transpose(m) {
   return new Matrix(...columns(m))
 }
 
+export function reverse(m) {
+  return m.map(r => r.reverse())
+}
+
 export function minor(...args) {
   return determinant(sub(...args))
 }
