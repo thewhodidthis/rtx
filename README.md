@@ -40,7 +40,7 @@ console.assert(vector() instanceof Tuple)
 
 Using Deno for example:
 
-```sh
+```
 deno run --import-map=imports.json example.js
 ```
 
